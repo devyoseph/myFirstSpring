@@ -1,7 +1,11 @@
 package FirstProject.first.domain;
 
+@Entity
 public class Member {
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; // @Id : PK 설정
+
+    @Column(name = "username") //DB의 column명이 `username`인 것과 매칭된다.
     private String name;
 
     public Long getId() {
